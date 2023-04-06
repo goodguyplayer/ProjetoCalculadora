@@ -1,0 +1,19 @@
+{
+    "name": "projeto-calculadora",
+    "version": "1.0.0",
+    "description": "Projeto Calculadora - Web",
+    "author": "Nathan B.S.",
+    "license": "MIT",
+    "main": "app.js",
+    "keywords": [
+      "nodejs",
+      "docker",
+      "jquery",
+      "bootstrap",
+      "express"
+    ],
+    "dependencies": {
+      "express": "^4.16.4",
+      "jquery": "^3.6.2"
+    }
+  }
