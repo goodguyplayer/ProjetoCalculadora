@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Projeto Calculadora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Projeto Calculadora</h1>
+        <p>Quatro operações, parenteses incluso.</p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <!-- Instructions -->
+            <div class="col-sm">
+                <h3>Instructions.:</h3>
+                <p>1. Enter the operation you wish to make</p>
+                <p>2. Press =</p>
+                <p>3. If your operation is valid, you'll get your output. Else, you'll get an error.</p>
+                    
+            </div>
+
+            <!-- Calculator -->
+            <div class="col-sm">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Your name here">
+                </div>
+                <div>
+                    <p>Box text pannel - Operations and result show here</p>
+                </div>
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-primary">7</button>
+                    <button type="button" class="btn btn-primary">4</button>
+                    <button type="button" class="btn btn-primary">1</button>
+                    <button type="button" class="btn btn-primary">(</button>
+                </div> 
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-primary">8</button>
+                    <button type="button" class="btn btn-primary">5</button>
+                    <button type="button" class="btn btn-primary">2</button>
+                    <button type="button" class="btn btn-primary">0</button>
+                </div> 
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-primary">9</button>
+                    <button type="button" class="btn btn-primary">6</button>
+                    <button type="button" class="btn btn-primary">3</button>
+                    <button type="button" class="btn btn-primary">)</button>
+                </div> 
+                <div class="btn-group-vertical margin-bottom:10px">
+                    <button type="button" class="btn btn-primary">+</button>
+                    <button type="button" class="btn btn-primary">-</button>
+                    <button type="button" class="btn btn-primary">x</button>
+                    <button type="button" class="btn btn-primary">%</button>
+                </div> 
+                <div class="btn-group-vertical margin-bottom:10px">
+                    <button type="button" class="btn btn-primary">AC</button>
+                    <button type="button" class="btn btn-primary">Clear</button>
+                    <button type="button" class="btn btn-primary">.</button>
+                    <button type="button" class="btn btn-primary">=</button>
+                </div> 
+            </div>
+
+            <!-- Log table -->
+            <div class="col-sm">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Operation</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>user_1</td>
+                            <td>5+5</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>user 2</td>
+                            <td>(5x5)+2</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>EbicKid</td>
+                            <td>1%0</td>
+                            <td>ERROR</td>
+                        </tr>
+                        <tr>
+                            <td>Your name here</td>
+                            <td>7.86-8</td>
+                            <td>-0.14</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
