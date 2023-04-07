@@ -4,17 +4,17 @@ services:
     build: ./web
     ports:
       - "5000:5000"
-    volumes:
-      - .:/code
+    #volumes:
+    #  - .:/code
 
-  api:
-    build: ./api
-    ports:
-      - "5050:5050"
-    volumes:
-      - .:/code
+  #api:
+  #  build: ./api
+  #  ports:
+  #    - "5050:5050"
+  #  volumes:
+  #    - .:/code
 
-  db:
-    build: ./db
-    ports:
-      - "3306:3306"
+  #db:
+  #  build: ./db
+  #  ports:
+  #    - "3306:3306"
