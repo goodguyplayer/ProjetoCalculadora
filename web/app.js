@@ -17,6 +17,7 @@ router.use(function (req,res,next) {
   
 app.use(express.static(path));
 app.use('/', router);
+app.use("/event-emitters", express.static('./event-emitters/'));
 
 app.listen(port, function () {
   console.log('Example app listening on port 5000!')
