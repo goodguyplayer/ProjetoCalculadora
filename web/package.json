@@ -10,10 +10,12 @@
       "docker",
       "jquery",
       "bootstrap",
+      "nodemon",
       "express"
     ],
     "dependencies": {
       "express": "^4.16.4",
-      "jquery": "^3.6.2"
+      "jquery": "^3.6.2",
+      "nodemon": "^2.0.22"
     }
   }
