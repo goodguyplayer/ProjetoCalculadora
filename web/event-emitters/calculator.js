@@ -14,7 +14,7 @@ let erase=()=>{
         result.textContent = result.textContent.slice(0, -1);
     }
     catch(err){
-        
+
     }
 }
 
@@ -23,7 +23,7 @@ let eraseAll=()=>{
 }
 
 let finishOperation=()=>{
-    console.log(document.getElementById("username"));
+    console.log(document.getElementById("username").value);
     try{
         result.textContent = eval(result.textContent);
     }
