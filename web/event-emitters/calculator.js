@@ -1,5 +1,3 @@
-//const jquery = require('jquery');
-
 let result = document.getElementById("calculator_screen");
 
 let calculate=(number)=>{
@@ -12,14 +10,20 @@ let calculate=(number)=>{
 }
 
 let erase=()=>{
-
+    try{
+        result.textContent = result.textContent.slice(0, -1);
+    }
+    catch(err){
+        
+    }
 }
 
 let eraseAll=()=>{
-    
+    result.textContent = ""
 }
 
 let finishOperation=()=>{
+    console.log(document.getElementById("username"));
     try{
         result.textContent = eval(result.textContent);
     }
