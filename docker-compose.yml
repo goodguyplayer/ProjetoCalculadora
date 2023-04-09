@@ -4,17 +4,27 @@ services:
     build: ./web
     ports:
       - "5000:5000"
+
     #volumes:
     #  - .:/code
 
-  #api:
-  #  build: ./api
-  #  ports:
-  #    - "5050:5050"
-  #  volumes:
-  #    - .:/code
+  api:
+    build: ./api
+    ports:
+      - "6050:6050"
 
-  #db:
-  #  build: ./db
-  #  ports:
-  #    - "3306:3306"
+    #volumes:
+    #  - .:/code
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
