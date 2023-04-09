@@ -1,3 +1,11 @@
+//import express from '../app.js';
+//var http = require('http');
+//const jquery = require('jquery');
+//const port = 5050;
+//const address = '192.168.15.7'
+//var client = http.createClient(port, address);
+//var request = client.request('PUT', '/users/1');
+
 let result = document.getElementById("calculator_screen");
 
 let calculate=(number)=>{
@@ -23,7 +31,23 @@ let eraseAll=()=>{
 }
 
 let finishOperation=()=>{
-    console.log(document.getElementById("username").value);
+    const toCalculate = {
+        username : document.getElementById("username").value,
+        operation : result.textContent,
+    };
+    fetch('/calculate', {method: 'POST'})
+        .then(function(response) {
+            if (response.ok){
+                console.log("Finish operation api called");
+                return toCalculate;
+            }
+            throw new Error('Request failed');
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+
+    console.log(toCalculate);
     try{
         result.textContent = eval(result.textContent);
     }

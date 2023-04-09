@@ -22,3 +22,8 @@ app.use("/event-emitters", express.static('./event-emitters/'));
 app.listen(port, function () {
   console.log('Example app listening on port 5000!')
 })
+
+app.post("/calculate", (req, res) =>{
+  console.log(req.body);
+  res.sendStatus(201);
+});
