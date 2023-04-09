@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jquery = require('jquery');
+const axios = require('axios');
+const { response } = require('express');
 
 
 const app = express();
@@ -30,6 +32,11 @@ app.listen(port, function () {
 })
 
 app.post("/calculate", jsonParser, function (req, res){
+  axios.post("http://localhost:6050/calculate", req.body)
+  .then((response) => {
+    console.log(response);
+  })
+
   console.log(req.body);
   res.sendStatus(201);
 });
