@@ -1,30 +1,18 @@
 version: '3.9'
+
 services:
-  web:
-    build: ./web
-    ports:
-      - "5000:5000"
-
-    #volumes:
-    #  - .:/code
-
-  api:
-    build: ./api
-    ports:
-      - "6050:6050"
-
-    #volumes:
-    #  - .:/code
 
   db:
     image: mariadb
     restart: always
+    ports:
+      - 127.0.0.1:3306:3306
     environment:
       MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: todo
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-

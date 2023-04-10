@@ -27,12 +27,22 @@ app.get('/all', async (req, res) => {
 // POST
 app.post('/newop', async (req, res) => {
     let body = req.body;
+    console.log(body);
     try {
-        const result = await db.pool.query("insert into operations (username, math_op, result) values (?, ?, ?)", [body.username, body.operation, body.result]);
-        res.send(result);
+        //var sql = "INSERT INTO operations (username, math_op, result) VALUES ?;";
+        var sql = "INSERT INTO operations (username, math_op, result) VALUES ('"+body.username+"', '"+body.operation+"', '"+body.result+"');";
+        var values = [body.username, body.operation, body.result];
+        db.pool.query(sql, function(err) {
+            if (err) throw err;
+        })
+        //const result = await db.pool.query(sql, [values], function (err) {
+        //    if (err) throw err;
+        //});
+        //res.send(result);
     } catch (err) {
         throw err;
     }
+    res.sendStatus(201);
 });
 
 
