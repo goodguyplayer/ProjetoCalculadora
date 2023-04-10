@@ -4,6 +4,8 @@ Projeto voltada a criação de uma calculadora com as quatro operações básica
 
 ## Instalação
 
+Antes de proceder, é necessário ter nodejs e docker instalado no ambiente.
+
 1. Clone o repositório em um ambiente de preferência;
 2. Em um terminal, rode o docker-compose.
 ```bash
