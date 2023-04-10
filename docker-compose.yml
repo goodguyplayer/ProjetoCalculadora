@@ -6,7 +6,7 @@ services:
     image: mariadb
     restart: always
     ports:
-      - 127.0.0.1:3306:3306
+      - 3306:3306
     environment:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: todo
