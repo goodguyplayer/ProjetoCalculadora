@@ -42,6 +42,10 @@ app.post("/calculate", jsonParser, function (req, res){
   return 
 });
 
-app.post("/update", jsonParser, function (req, res){
-  console.log(req.body);
-})
+app.get("/loaddata", jsonParser, function (req, res){
+  axios.get("http://localhost:6050/loaddata", req.body)
+  .then((response) => {
+    res.status(201).send(response.data);
+  })
+  return 
+});

@@ -5,6 +5,7 @@ const cors = require("cors");
 const _ = require("lodash");
 const axios = require('axios');
 const {v4: uuid} = require("uuid");
+const { response } = require("express");
 
 const PORT = 6050;
 
@@ -43,4 +44,11 @@ app.post("/calculate", jsonParser, function (req, res){
   })
   res.send(JSON.stringify({username: req.body.username, operation: req.body.operation, result: result}));
   return JSON.stringify({username: req.body.username, operation: req.body.operation, result: result});
+});
+
+app.get("/loaddata", jsonParser, function (req, res){
+  axios.get("http://localhost:7000/all")
+  .then((response) => {
+    res.send(response.data);
+  })
 });

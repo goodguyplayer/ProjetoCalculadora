@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./customstyle.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -36,13 +37,13 @@
             <div class="col-sm">
                 <div class="form-group">
                     <label for="usr">Name:</label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" class="form-control" id="usr" placeholder="your name here">
                   </div>
                 <!--<div>
                     <p class="bg-success text-white" id="calculator_screen">Box text pannel - Operations and result show here</p>
                 </div> -->
-                <div type="text" class="form-control" id="calculator_screen" disabled></div>
-                <div class="btn-group-vertical">
+                <div type="text" class="form-control margin-bottom" id="calculator_screen" disabled></div>
+                <div class="btn-group-vertical padding:8px">
                     <button type="button" class="btn btn-primary" onclick="calculate('7')" >7</button>
                     <button type="button" class="btn btn-primary" onclick="calculate('4')" >4</button>
                     <button type="button" class="btn btn-primary" onclick="calculate('1')" >1</button>
@@ -75,8 +76,8 @@
             </div>
 
             <!-- Log table -->
-            <div class="col-sm">
-                <table class="table table-dark table-hover" id="operation_table">
+            <div class="col-sm table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-dark table-hover table-striped text-center overflow-y:auto" id="operation_table" >
                     <thead>
                         <tr>
                             <th>Username</th>
@@ -85,26 +86,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>user_1</td>
-                            <td>5+5</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>user 2</td>
-                            <td>(5x5)+2</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <td>EbicKid</td>
-                            <td>1%0</td>
-                            <td>ERROR</td>
-                        </tr>
-                        <tr>
-                            <td>Your name here</td>
-                            <td>7.86-8</td>
-                            <td>-0.14</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

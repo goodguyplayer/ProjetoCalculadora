@@ -9,6 +9,20 @@
 let result = $("#calculator_screen");
 let username_data = $("#username");
 
+$.ajax({
+    type: 'GET',
+    url: '/loaddata',
+    success: async function(data) {
+        data.forEach(addToTable);
+    },
+    contentType: "application/json",
+    dataType: 'json'
+});
+
+function addToTable(item){
+    $("#operation_table").find('tbody')
+        .append($('<tr><td>'+item.username+'</td><td>'+item.math_op+'</td><td>'+item.result+'</td></tr>'))
+}
 
 let calculate=(number)=>{
     if(typeof result == 'undefined'){
