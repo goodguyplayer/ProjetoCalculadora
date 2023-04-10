@@ -38,7 +38,6 @@ app.post("/calculate", jsonParser, function (req, res){
    result = "ERROR";
   }
   axios.post("http://localhost:7000/newop", {username: req.body.username, operation: req.body.operation, result: result})
-  //axios.post("http://localhost:7000/newop", JSON.stringify({username: req.body.username, operation: req.body.operation, result: result}))
   .then((response) => {
     console.log("response");
   })

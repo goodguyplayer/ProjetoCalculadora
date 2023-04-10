@@ -10,7 +10,9 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: todo
-
+    volumes:
+      - /db/database/:/home
+    
   adminer:
     image: adminer
     restart: always

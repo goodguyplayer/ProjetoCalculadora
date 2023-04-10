@@ -29,16 +29,11 @@ app.post('/newop', async (req, res) => {
     let body = req.body;
     console.log(body);
     try {
-        //var sql = "INSERT INTO operations (username, math_op, result) VALUES ?;";
         var sql = "INSERT INTO operations (username, math_op, result) VALUES ('"+body.username+"', '"+body.operation+"', '"+body.result+"');";
         var values = [body.username, body.operation, body.result];
         db.pool.query(sql, function(err) {
             if (err) throw err;
         })
-        //const result = await db.pool.query(sql, [values], function (err) {
-        //    if (err) throw err;
-        //});
-        //res.send(result);
     } catch (err) {
         throw err;
     }

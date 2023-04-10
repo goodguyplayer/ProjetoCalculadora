@@ -1,11 +1,3 @@
-//import express from '../app.js';
-//var http = require('http');
-//const jquery = require('jquery');
-//const port = 5050;
-//const address = '192.168.15.7'
-//var client = http.createClient(port, address);
-//var request = client.request('PUT', '/users/1');
-//let result = document.getElementById("calculator_screen");
 let result = $("#calculator_screen");
 let username_data = $("#username");
 
