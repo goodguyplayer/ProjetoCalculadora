@@ -12,16 +12,16 @@ let username_data = $("#username");
 
 let calculate=(number)=>{
     if(typeof result == 'undefined'){
-        result.text(number);
+        $("#calculator_screen").text(number);
     }
     else{
-        result.text(result.text() + number);        
+        $("#calculator_screen").text($("#calculator_screen").text() + number);        
     }
 }
 
 let erase=()=>{
     try{
-        result.text(result.text().slice(0, -1));
+        $("#calculator_screen").text($("#calculator_screen").text().slice(0, -1));
     }
     catch(err){
 
@@ -29,28 +29,23 @@ let erase=()=>{
 }
 
 let eraseAll=()=>{
-    result.text("");
+    $("#calculator_screen").text("");
 }
 
 let finishOperation=()=>{
-    const body = {
-        "username" : username_data.text(),
-        "operation" : result.text(),
-    };
-
     $.ajax({
         type: 'POST',
         url: '/calculate',
-        data: JSON.stringify({username: username_data.text(), operation: result.text()}),
+        data: JSON.stringify({username: $("#usr").val(), operation: $("#calculator_screen").text()}),
         success: function(data) {alert('data: ' + data); },
         contentType: "application/json",
         dataType: 'json'
     });
 
     try{
-        result.textContent = eval(result.textContent);
+        $("#calculator_screen").textContent = eval($("#calculator_screen").textContent);
     }
     catch(err){
-        result.textContent = "ERROR";
+        $("#calculator_screen").textContent = "ERROR";
     }
 }
