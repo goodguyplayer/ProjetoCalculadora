@@ -29,6 +29,18 @@ router.use(function (req,res,next) {
 app.listen(PORT, () => console.log("API server, start"));
 
 app.post("/calculate", jsonParser, function (req, res){
-  console.log(req.body);
-  res.sendStatus(201);
+  var result;
+  try{
+    result = eval(req.body.operation).toString();
+  }
+  catch(err){
+   result = "ERROR";
+  }
+  axios.post("http://localhost:7000/newop", {username: req.body.username, operation: req.body.operation, result: result})
+  //axios.post("http://localhost:7000/newop", JSON.stringify({username: req.body.username, operation: req.body.operation, result: result}))
+  .then((response) => {
+    console.log("response");
+  })
+  res.send(JSON.stringify({username: req.body.username, operation: req.body.operation, result: result}));
+  return JSON.stringify({username: req.body.username, operation: req.body.operation, result: result});
 });

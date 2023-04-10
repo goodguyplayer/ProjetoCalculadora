@@ -37,15 +37,11 @@ let finishOperation=()=>{
         type: 'POST',
         url: '/calculate',
         data: JSON.stringify({username: $("#usr").val(), operation: $("#calculator_screen").text()}),
-        success: function(data) {alert('data: ' + data); },
+        success: async function(data) {
+            $("#operation_table").find('tbody')
+                .append($('<tr><td>'+data.username+'</td><td>'+data.operation+'</td><td>'+data.result+'</td></tr>'))
+        },
         contentType: "application/json",
         dataType: 'json'
     });
-
-    try{
-        $("#calculator_screen").textContent = eval($("#calculator_screen").textContent);
-    }
-    catch(err){
-        $("#calculator_screen").textContent = "ERROR";
-    }
 }

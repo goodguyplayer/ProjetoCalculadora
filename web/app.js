@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jquery = require('jquery');
 const axios = require('axios');
+const cheerio = require('cheerio');
 const { response } = require('express');
 
 
@@ -26,6 +27,7 @@ app.use(express.static(path));
 app.use(bodyParser.json())
 app.use('/', router);
 app.use("/event-emitters", express.static('./event-emitters/'));
+app.set('view engine', 'ejs');
 
 app.listen(port, function () {
   console.log('Example app listening on port 5000!')
@@ -34,9 +36,12 @@ app.listen(port, function () {
 app.post("/calculate", jsonParser, function (req, res){
   axios.post("http://localhost:6050/calculate", req.body)
   .then((response) => {
-    console.log(response);
+    console.log(response.data);
+    res.status(201).send(response.data);
   })
-
-  console.log(req.body);
-  res.sendStatus(201);
+  return 
 });
+
+app.post("/update", jsonParser, function (req, res){
+  console.log(req.body);
+})
